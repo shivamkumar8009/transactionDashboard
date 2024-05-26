@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
-import "chart.js/auto"; // Import the entire chart.js library for auto registration
+import "chart.js/auto";
 import "./Dashboard.css";
 
 const Dashboard = () => {
@@ -41,7 +41,7 @@ const Dashboard = () => {
           params: {
             month: selectedMonth,
             page: currentPage,
-            limit: 3, // Limiting to 3 transactions per page
+            limit: 3, 
           },
         }
       );
@@ -70,18 +70,18 @@ const Dashboard = () => {
 
   useEffect(() => {
     fetchTransactions();
-  }, [selectedMonth, currentPage]); // Fetch transactions when month or page changes
+  }, [selectedMonth, currentPage]); 
 
   const handleMonthChange = (e) => {
     setSelectedMonth(e.target.value);
-    setCurrentPage(1); // Reset page to 1 when month changes
+    setCurrentPage(1); 
   };
 
   const handleSearch = async () => {
     try {
       let filteredTransactions = [...transactions];
       if (searchText.trim() !== "") {
-        // Filter transactions based on title, description, or price containing the search text
+        
         filteredTransactions = transactions.filter(
           (transaction) =>
             transaction.title
@@ -200,9 +200,9 @@ const Dashboard = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr>  
                 <td>Total Sales</td>
-                <td>${data.totalSales}</td>
+                <td>{data.totalSales}</td>
               </tr>
               <tr>
                 <td>Total Sold Items</td>
