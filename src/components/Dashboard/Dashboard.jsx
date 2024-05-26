@@ -195,7 +195,7 @@ const Dashboard = () => {
           <table className="data-table">
             <thead>
               <tr>
-                <th>Metric</th>
+                <th>Data</th>
                 <th>Value</th>
               </tr>
             </thead>
